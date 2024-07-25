@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Details</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+
+<div class="wrapper">
+    <form class="form" action="" method="post">
+        {% csrf_token %}
+        <h1>Enter Process Details</h1>
+        {% if algorithm == 'round_robin' %}
+                <label for="time_quantum">Time Qunatum: </label>
+                <input type="number" id="time_quantum" name="time_quantum">
+        {% endif %}
+        {% for i in processes %}
+            <h3>Process {{ i }}</h3>
+            <label for="process_id_{{ i }}">Process Id:</label>
+            <input type="text" id="process_id_{{ i }}" name="process_id_{{ i }}" required>
+
+            <label for="arrival_time_{{ i }}">Arrival Time:</label>
+            <input type="number" id="arrival_time_{{ i }}" name="arrival_time_{{ i }}" required>
+
+            <label for="burst_time_{{ i }}">Burst Time:</label>
+            <input type="number" id="burst_time_{{ i }}" name="burst_time_{{ i }}" required>
+
+            {% if algorithm == 'priority' %}
+                <label for="priority_{{ i }}">Priority:</label>
+                <input type="number" id="priority_{{ i }}" name="priority_{{ i }}">
+            {% endif %}
+        {% endfor %}
+
+        <button class="enter" type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
