@@ -55,7 +55,6 @@ def process_details(request):
     
     return render(request, 'process_details.html', {'algorithm': algorithm, 'processes': range(processes)})
 
-
 # calculate total waiting time & turn around time 
 
 def fcfs(process_data):
