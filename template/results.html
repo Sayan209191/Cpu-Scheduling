@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
 </head>
+
 <body>
-    <h1>Results </h1>
-    
-    <h2>Process Details</h2>
-    <table border="1">
-        <tr>
-            <th>Process ID</th>
-            <th>Arrival Time</th>
-            <th>Burst Time</th>
-        </tr>
-        {% for process in process_data %}
-        <tr>
-            <td>{{ process.id}}</td>
-            <td>{{ process.arrival_time }}</td>
-            <td>{{ process.burst_time }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    
-    <h2>Summary</h2>
-    <p>Total Waiting Time: {{ total_waiting_time }}</p>
-    <p>Average Waiting Time: {{ average_waiting_time }}</p>
-    <p>Total Turnaround Time: {{ total_turnaround_time }}</p>
+    <div class="res">
+        <div class="res-body">
+            <h1>Results </h1>
+
+            <h2>Process Details</h2>
+            <table border="1">
+                <tr>
+                    <th>Process ID</th>
+                    <th>Arrival Time</th>
+                    <th>Burst Time</th>
+                </tr>
+                {% for process in process_data %}
+                <tr>
+                    <td>{{ process.id}}</td>
+                    <td>{{ process.arrival_time }}</td>
+                    <td>{{ process.burst_time }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <h2>Summary</h2>
+            <p>Total Waiting Time : {{ total_waiting_time }}</p>
+            <p>Average Waiting Time : {{ average_waiting_time }}</p>
+            <p>Total Turnaround Time : {{ total_turnaround_time }}</p>
+        </div>
+    </div>
 </body>
+
 </html>

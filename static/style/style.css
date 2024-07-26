@@ -2,7 +2,7 @@ body {
     display: flex; /* Enables flexbox layout */
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
-    height: 45rem; /* Sets the height of the body */
+    /* height: 45rem; Sets the height of the body */
     font-family: 'Courier New', Courier, monospace; /* Sets the font family */
     margin: 0; /* Removes default margin to avoid overflow issues */
 }
@@ -15,6 +15,7 @@ body {
     height: 40rem;
     overflow: hidden;
     font-style:bold;
+    margin-top: 2rem;
 }
 .form{
     display: grid;
@@ -38,10 +39,10 @@ h1{
 
 
 }
-input{
+.idnum{
     margin-top: 50px;
     margin-bottom: -10px;
-    margin-left: 170px;
+    margin-left: 2px;
     
     background:transparent;
     width: 14rem;
@@ -51,6 +52,9 @@ input{
     border-radius:  1.3rem;
     padding: 10px;
 }
+/* input{
+    
+} */
 ::placeholder{
     columns: rgb(120,116,119);
     padding: 5px;
@@ -109,11 +113,14 @@ a{
 
 }
 
-
+.process-details .entry {
+    font-size-adjust: 1.1;
+}
 .chose{
     margin-left: 150px;
     font-size: 25px;
-    /* font-style:bold; */
+
+    font-weight:bold;
 
 }
 element.style {
@@ -133,9 +140,105 @@ element.style {
 #xyz{
     font-weight:bold;
 }
-@media screen and (min-width:767px)and (max-width:1023px){
-    .box{
-        display: flex;        
-    }
+.wrapper {
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8rem;
 }
+.process-details {
+    display: grid;
+    justify-content: center;
+}
+.form2{
+    margin-top: -6rem;
+    font-size: 25px;
     
+}
+.btn2 {
+    position: relative;
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 2;
+    height: 48px;
+    border-radius: 4px;
+    width: 210px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: aquamarine;
+    color: #fff;
+    box-shadow: 0 6px 15px 0 rgba(16,39, 112,0.15);
+    transition: all 250ms linear;
+    text-decoration: none;
+    margin-top: 75px;
+    margin-left:241px;
+}
+.btn2:hover {
+    box-shadow: 0 12px 35px 0 rgba(16,39, 112,0.25);
+    background-color: #333;
+}
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    
+    
+}
+
+.res {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin-left: 350px;
+    margin-top: 70px;
+}
+
+.res h1, .res h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.res table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.res table, .res th, .res td {
+    border: 1px solid #ddd;
+}
+
+.res th, .res td {
+    padding: 12px;
+    text-align: center;
+}
+
+.res th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.res td {
+    color: #666;
+}
+
+.res p {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.res-body{
+    margin-left: 260px;
+    font-size: 20px;
+    margin-top: 50px;
+}
