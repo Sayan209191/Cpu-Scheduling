@@ -69,14 +69,15 @@ def fcfs(process_data):
     n = len(sorted_process_data)
     waiting_time = [0] * n
     turnaround_time = [0] * n
+    curr_time = sorted_process_data[0]['arrival_time'] - 0
     
     waiting_time[0] = 0
+    
     turnaround_time[0] = sorted_process_data[0]['burst_time']
     
-    total_processing_time = sorted_process_data[0]['burst_time']
+    total_processing_time = sorted_process_data[0]['burst_time'] + curr_time
     # Calculate waiting time
     for i in range(1, n):
-        
         if total_processing_time - sorted_process_data[i]['arrival_time'] < 0:
             waiting_time[i] = 0
         else :
@@ -112,22 +113,23 @@ def sjf(process_data):
     turnaround_time = [0] * n
     completed = [False] * n
     
-    current_time = 0
+    current_time = sorted_process_data[0]['arrival_time']  # Initialize current_time to the arrival of the first process
     completed_processes = 0
     
     while completed_processes < n:
         # Find the process with the shortest burst time that has arrived
         shortest = None
+        # find out the sortest job who came before current time
         for i in range(n):
-            if (not completed[i]) and (sorted_process_data[i]['arrival_time'] <= current_time):
-                if (shortest is None) or (sorted_process_data[i]['burst_time'] < sorted_process_data[shortest]['burst_time']):
+            if not completed[i] and sorted_process_data[i]['arrival_time'] <= current_time:
+                if shortest is None or sorted_process_data[i]['burst_time'] < sorted_process_data[shortest]['burst_time']:
                     shortest = i
         
         if shortest is not None:
             # Process the selected shortest job
+            waiting_time[shortest] = current_time - sorted_process_data[shortest]['arrival_time']
             current_time += sorted_process_data[shortest]['burst_time']
-            waiting_time[shortest] = current_time - sorted_process_data[shortest]['arrival_time'] - sorted_process_data[shortest]['burst_time']
-            turnaround_time[shortest] = current_time - sorted_process_data[shortest]['arrival_time']
+            turnaround_time[shortest] = waiting_time[shortest] + sorted_process_data[shortest]['burst_time']
             completed[shortest] = True
             completed_processes += 1
         else:
