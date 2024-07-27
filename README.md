@@ -1,31 +1,141 @@
-CPU Scheduling Algorithm Visualizer
-Overview
-This project is a web-based CPU scheduling algorithm visualizer built using Django. It allows users to input process details and visualize the scheduling of processes using various algorithms. The implemented algorithms include First-Come, First-Served (FCFS), Shortest Job First (SJF), Round Robin, and Priority Scheduling.
+<p align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png" width="100" />
+</p>
+<p align="center">
+    <h1 align="center">CPU-SCHEDULING</h1>
+</p>
 
-Features
+
+<p align="center">
+		<em>Developed with the software and tools below.</em>
+</p>
+<p align="center">
+	<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=flat&logo=HTML5&logoColor=white" alt="HTML5">
+	<img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat&logo=Python&logoColor=white" alt="Python">
+</p>
+<hr>
+
+##  Quick Links
+
+> - [ Overview](#-overview)
+> - [ Features](#-features)
+> - [ Repository Structure](#-repository-structure)
+> - [ Modules](#-modules)
+> - [ Getting Started](#-getting-started)
+>   - [ Installation](#-installation)
+>   - [ Running Cpu-Scheduling](#-running-Cpu-Scheduling)
+>   - [ Tests](#-tests)
+> - [ Project Roadmap](#-project-roadmap)
+> - [ Contributing](#-contributing)
+> - [ License](#-license)
+> - [ Acknowledgments](#-acknowledgments)
+
+---
+
+##  Overview
+
+
+---
+
+##  Features
+
 Process Input Forms: Users can input process details including process ID, arrival time, burst time, and priority (for Priority Scheduling).
+
 Session Management: User inputs are managed through Django sessions to ensure smooth data transfer between views.
+
 Algorithm Selection: Users can select from FCFS, SJF, Round Robin, and Priority Scheduling algorithms.
+
 Results Display: The application calculates and displays total waiting time, average waiting time, and total turnaround time for the selected scheduling algorithm.
+
 Round Robin Time Quantum: For the Round Robin algorithm, users can input the time quantum.
-Installation
-Clone the repository:
 
-sh
-Copy code
-git clone https://github.com/Sayan209191/Cpu-Scheduling.git
+---
+
+##  Repository Structure
+
+```sh
+└── Cpu-Scheduling/
+    ├── README.md
+    ├── cpuseduling
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-311.pyc
+    │   │   ├── settings.cpython-311.pyc
+    │   │   ├── urls.cpython-311.pyc
+    │   │   └── wsgi.cpython-311.pyc
+    │   ├── asgi.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── db.sqlite3
+    ├── manage.py
+    ├── myapp
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-311.pyc
+    │   │   ├── admin.cpython-311.pyc
+    │   │   ├── apps.cpython-311.pyc
+    │   │   ├── models.cpython-311.pyc
+    │   │   ├── urls.cpython-311.pyc
+    │   │   └── views.cpython-311.pyc
+    │   ├── admin.py
+    │   ├── apps.py
+    │   ├── migrations
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-311.pyc
+    │   ├── models.py
+    │   ├── tests.py
+    │   ├── urls.py
+    │   └── views.py
+    ├── static
+    │   └── style
+    │       └── style.css
+    └── template
+        ├── index.html
+        ├── process_details.html
+        └── results.html
+```
+
+---
+
+
+</details>
+
+---
+
+##  Getting Started
+
+***Requirements***
+
+Ensure you have the following dependencies installed on your system:
+
+* **Python**: `version 3.9`
+
+###  Installation
+
+1. Clone the Cpu-Scheduling repository:
+
+```sh
+git clone https://github.com/Sayan209191/Cpu-Scheduling
+```
+
+2. Change to the project directory:
+
+```sh
 cd Cpu-Scheduling
-Install dependencies:
+```
 
-sh
-Copy code
+3. Install the dependencies:
+
+```sh
 pip install django
-pip install pymysql
+pip install pymqsql
+```
+###  Set up DataBase
 Setup the database:
 Make sure you have MySQL installed and running. Update the DATABASES setting in settings.py with your MySQL credentials.
 
-python
-code
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -36,21 +146,25 @@ DATABASES = {
         'PORT' : '3306',
     }
 }
-
-Run migrations:
-
-sh
-Copy code
+###  Run Migration
+```sh
+python manage.py makemigrations
 python manage.py migrate
-Start the development server:
+```
+###  Running Cpu-Scheduling
 
-sh
-Copy code
+Use the following command to run Cpu-Scheduling:
+
+```sh
 python manage.py runserver
-Access the application:
+```
+
+###  Access the application
+
 Open your web browser and go to http://127.0.0.1:8000/.
 
-Usage
+###  Usage
+
 Home Page:
 
 Select the desired scheduling algorithm.
